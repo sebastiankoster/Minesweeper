@@ -196,7 +196,7 @@ if(gameOn) checkWin();
 
 void mousePressed(){
 if (gameOn && !gameStarted){
-setMines(mouseY/80,mouseX/80);}
+setMines((int)(mouseY/80),(int)(mouseX/80));}
 if(finalMessageDisplayed)
   finalMessageDisplayed = false;  
 if(mouseButton == LEFT && mouseY<800)
