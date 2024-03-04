@@ -1,10 +1,11 @@
-import de.bezier.guido.*;Button[][] minefield = new Button[10][10];
-ArrayList<Integer> mineList  = new ArrayList <Integer>();
+import de.bezier.guido.*;
+Button [] [] minefield = new Button [10] [10];
+ArrayList <Integer> mineList  = new ArrayList <Integer> ();
 boolean gameOn = true;
 boolean gameStarted = false;
 boolean finalMessageDisplayed = false;
 int flagCount = 0;
-int shownCount;
+int shownCount ;
 int hasWon = 0;   //0 means game is on, 1 means true, -1 means false
 
 void setup(){
