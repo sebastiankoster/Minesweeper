@@ -1,4 +1,3 @@
-import de.bezier.guido.*;
 Button [] [] minefield = new Button [10] [10];
 ArrayList <Integer> mineList  = new ArrayList <Integer> ();
 boolean gameOn = true;
