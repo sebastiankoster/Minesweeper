@@ -177,7 +177,7 @@ for(int j = 0; j<10; j++){
 textAlign(LEFT);
 textSize(34);
 fill(0,0,0);
-text("There are " + mineList.size() + " mines and you flagged " + flagCount + " in " + frameCount/60 + " seconds", 20, 850);
+text("There are " + mineList.size() + " mines and you flagged " + flagCount + " in " + (float)frameCount/60 + " seconds", 20, 850);
 textAlign(CENTER);
 if(finalMessageDisplayed){
   fill(209,250,233,200);
