@@ -59,8 +59,11 @@ public boolean checkWin()
 public void displayLosingMessage()
 {
   //your code here
+  fill(255,255,255);
   rect(350,250,100,300);
+  fill(0);
   text("You're a bum", 400,400 )
+noLoop();
 }
 
 public void displayWinningMessage()
