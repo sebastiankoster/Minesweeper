@@ -62,9 +62,6 @@ public void displayLosingMessage()
   rect(350,250,100,300);
   textAlign(CENTER,CENTER);
   text("You're a bum", 400,400 )
-    }
-  }
-  
 }
 
 public void displayWinningMessage()
