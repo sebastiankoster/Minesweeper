@@ -60,7 +60,7 @@ public void displayLosingMessage()
 {
   //your code here
   fill(255,255,255);
-  rect(350,250,100,300);
+  rect(250,350,300,100);
   fill(0);
   text("You're a bum", 400,400 )
 noLoop();
