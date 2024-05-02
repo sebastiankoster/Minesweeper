@@ -10,7 +10,7 @@ void setup ()
  
   size(800, 800);
   textAlign(CENTER, CENTER);
-
+  textSize(25);
   // make the manager
   Interactive.make( this );
   buttons = new MSButton[numRows][numCols];
@@ -60,7 +60,6 @@ public void displayLosingMessage()
 {
   //your code here
   rect(350,250,100,300);
-  textAlign(CENTER,CENTER);
   text("You're a bum", 400,400 )
 }
 
