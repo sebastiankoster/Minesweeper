@@ -59,9 +59,9 @@ public boolean checkWin()
 public void displayLosingMessage()
 {
   //your code here
-  for(int r = 0; r < numRows; r++){
-    for(int c = 0; c < numCols; c++){
-        buttons[r][c].setLabel("L");
+  rect(350,250,100,300);
+  textAlign(CENTER,CENTER);
+  text("You're a bum", 400,400 )
     }
   }
   
