@@ -106,8 +106,8 @@ public class MSButton
 
   public MSButton ( int row, int col )
   {
-    width = 400/numCols;
-    height = 400/numRows;
+    width = 800/numCols;
+    height = 800/numRows;
     myRow = row;
     myCol = col; 
     x = myCol*width;
