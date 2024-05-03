@@ -50,6 +50,7 @@ while (mines.size()< numMines) {
 public void draw ()
 {
   background( 0 );
+if(!gameOn) return;
   if (checkWin() == true){
     displayWinningMessage();
     noLoop();
