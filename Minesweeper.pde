@@ -2,8 +2,6 @@ import de.bezier.guido.*;
 int numRows = 10;
 int numCols = 10;
 int numMines = 18;
-int mouseXinit;
-int mouseYinit;
 boolean gameOn = false;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> mines =new ArrayList<MSButton>(); //ArrayList of just the minesweeper buttons that are mined
@@ -15,13 +13,6 @@ void setup ()
   textSize(25);
   // make the manager
   Interactive.make( this );
-
-}
-
-void mousePressed(){
-mouseXinit = mouseX/800;
-mouseYinit = mouseY/800;
-if (gameOn) return;
   buttons = new MSButton[numRows][numCols];
   //your code to initialize buttons goes here
 
@@ -34,14 +25,13 @@ if (gameOn) return;
   setMines();
 }
 
-
 public void setMines()
 {
 
 while (mines.size()< numMines) { 
    int r = (int)(Math.random()*numRows);
    int c = (int)(Math.random()*numCols);
-  if (!mines.contains(buttons[r][c]) && Math.abs(c-mouseXinit)<4 && Math.abs(r-mouseYinit)<4){
+  if (!mines.contains(buttons[r][c])){
   mines.add(buttons[r][c]);
   }
 }
@@ -50,7 +40,6 @@ while (mines.size()< numMines) {
 public void draw ()
 {
   background( 0 );
-if(!gameOn) return;
   if (checkWin() == true){
     displayWinningMessage();
     noLoop();
@@ -187,3 +176,15 @@ public class MSButton
   }
 }
 
+public void mousePressed () 
+  {
+    if(!gameOn){
+      for(int i =0; i<buttons.size(); i++){
+        if(Math.abs(buttons.get(i).x-mouseX/800)<=3 && Math.abs(buttons.get(i).y-mouseY/800)<=3){
+          buttons.remove(i);
+          i--;
+      }
+    }
+gameOn = true;
+  }
+}
