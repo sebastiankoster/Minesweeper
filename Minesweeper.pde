@@ -8,7 +8,7 @@ void setup ()
 {
   
  
-  size(400, 400);
+  size(800, 1000);
   textAlign(CENTER, CENTER);
 
   // make the manager
@@ -44,6 +44,10 @@ public void draw ()
     displayWinningMessage();
     noLoop();
 }
+fill(124, 252, 0);
+rect(0,800,900,200);
+text("There are " + mines.size() + " mines      " + frameCount/60 + "sec", 400,850);
+
 }
 public boolean checkWin()
 {
@@ -59,23 +63,24 @@ public boolean checkWin()
 public void displayLosingMessage()
 {
   //your code here
-  for(int r = 0; r < numRows; r++){
-    for(int c = 0; c < numCols; c++){
-        buttons[r][c].setLabel("L");
-    }
-  }
-  
+  fill(255,255,255);
+  rect(250,350,300,100);
+  fill(0);
+  text("You're a bum", 400,400 )
+noLoop();
 }
 
-public void displayWinningMessage()
+public void displayLosingMessage()
 {
   //your code here
-  for(int r = 0; r < numRows; r++){
-      for(int c = 0; c < numCols; c++){
-        buttons[r][c].setLabel("W");
-      }
-    }
+  fill(255,255,255);
+  rect(250,350,300,100);
+  fill(0);
+  text("You Won. Good Job", 400,400 )
+noLoop();
 }
+
+
 public boolean isValid(int r, int c)
 {
   if (r>=0 && r<10 && c>=0 && c<10)
@@ -106,8 +111,8 @@ public class MSButton
 
   public MSButton ( int row, int col )
   {
-    width = 400/numCols;
-    height = 400/numRows;
+    width = 800/numCols;
+    height = 800/numRows;
     myRow = row;
     myCol = col; 
     x = myCol*width;
@@ -154,11 +159,11 @@ public class MSButton
     if (flagged)
       fill(0);
      else if( clicked && mines.contains(this) ) 
-        fill(255,0,0);
+      fill(234,38,38);
     else if (clicked)
-      fill( 200 );
+      fill(240,209,87);
     else 
-    fill( 100 );
+    fill(81,179,81);
 
     rect(x, y, width, height);
     fill(0);
