@@ -1,16 +1,16 @@
 import de.bezier.guido.*;
 int numRows = 10;
 int numCols = 10;
-int numMines = 18;
-boolean gameOn = false;
+int numMines = 15;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> mines =new ArrayList<MSButton>(); //ArrayList of just the minesweeper buttons that are mined
-
 void setup ()
-{ 
-  size(800, 800);
+{
+  
+ 
+  size(400, 400);
   textAlign(CENTER, CENTER);
-  textSize(25);
+
   // make the manager
   Interactive.make( this );
   buttons = new MSButton[numRows][numCols];
@@ -59,11 +59,12 @@ public boolean checkWin()
 public void displayLosingMessage()
 {
   //your code here
-  fill(255,255,255);
-  rect(250,350,300,100);
-  fill(0);
-  text("You're a bum", 400,400 )
-noLoop();
+  for(int r = 0; r < numRows; r++){
+    for(int c = 0; c < numCols; c++){
+        buttons[r][c].setLabel("L");
+    }
+  }
+  
 }
 
 public void displayWinningMessage()
@@ -99,13 +100,14 @@ public int countMines(int row, int col)
 public class MSButton
 {
   private int myRow, myCol;
-  public boolean clicked, flagged;
+  private float x, y, width, height;
+  private boolean clicked, flagged;
   private String myLabel;
 
   public MSButton ( int row, int col )
   {
-    width = 800/numCols;
-    height = 800/numRows;
+    width = 400/numCols;
+    height = 400/numRows;
     myRow = row;
     myCol = col; 
     x = myCol*width;
@@ -152,11 +154,11 @@ public class MSButton
     if (flagged)
       fill(0);
      else if( clicked && mines.contains(this) ) 
-        fill(234,38,38);
+        fill(255,0,0);
     else if (clicked)
-      fill(240,209,87);
+      fill( 200 );
     else 
-    fill(81,179,81);
+    fill( 100 );
 
     rect(x, y, width, height);
     fill(0);
@@ -176,15 +178,3 @@ public class MSButton
   }
 }
 
-public void mousePressed () 
-  {
-    if(!gameOn){
-      for(int i =0; i<buttons.size(); i++){
-        if(Math.abs(buttons.get(i).x-mouseX/800)<=3 && Math.abs(buttons.get(i).y-mouseY/800)<=3){
-          buttons.remove(i);
-          i--;
-      }
-    }
-gameOn = true;
-  }
-}
