@@ -7,7 +7,7 @@ private ArrayList <MSButton> mines =new ArrayList<MSButton>(); //ArrayList of ju
 void setup ()
 {
   
- 
+  textSize(48);
   size(800, 1000);
   textAlign(CENTER, CENTER);
 
@@ -46,6 +46,7 @@ public void draw ()
 }
 fill(124, 252, 0);
 rect(0,800,900,200);
+fill(0);
 text("There are " + mines.size() + " mines      " + frameCount/60 + "sec", 400,850);
 
 }
